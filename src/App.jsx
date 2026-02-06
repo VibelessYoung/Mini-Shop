@@ -9,8 +9,10 @@ function App() {
     <>
       <Header />
       <Filter />
-      <Products />
-      <ShoppingCart />
+      <div className="flex justify-between items-start">
+        <ShoppingCart />
+        <Products />
+      </div>
     </>
   );
 }
