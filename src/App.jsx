@@ -1,10 +1,12 @@
 import "./styles/Style.css";
 import Header from "./components/Header";
+import Filter from "./components/Filter";
 
 function App() {
   return (
     <>
       <Header />
+      <Filter />
     </>
   );
 }
