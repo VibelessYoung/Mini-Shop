@@ -1,6 +1,6 @@
 function ShoppingCart() {
   return (
-    <aside className="w-full md:w-80 p-6 sticky top-24">
+    <aside className="w-full md:w-80 p-6 top-24">
       <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4">
         <h2 className="font-bold text-green-700 text-center">
           🛒 3 آیتم در سبد خرید
