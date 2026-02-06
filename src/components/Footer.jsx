@@ -1,10 +1,8 @@
-import React from "react";
-
 function Footer() {
   return (
-    <div className="w-full h-20 flex justify-center items-center bg-violet-900">
-      <h1 className="text-2xl text-white font-medium">footer</h1>
-    </div>
+    <footer className="mt-16 h-20 flex items-center justify-center bg-gradient-to-r from-violet-900 to-indigo-900 text-white">
+      <p className="tracking-wide text-sm">© 2026 SHOP — All Rights Reserved</p>
+    </footer>
   );
 }
 
