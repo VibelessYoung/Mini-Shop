@@ -1,55 +1,32 @@
-import React from "react";
-
 function ShoppingCart() {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h2 className="text-green-800">شما 3 آیتم در سبد خرید خود دارید</h2>
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <p>1 خرید</p>
-              <p>200 تومان</p>
+    <aside className="w-full md:w-80 p-6 sticky top-24">
+      <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4">
+        <h2 className="font-bold text-green-700 text-center">
+          🛒 3 آیتم در سبد خرید
+        </h2>
+
+        {[1, 2, 3].map((item) => (
+          <div
+            key={item}
+            className="flex justify-between items-center bg-gray-100 rounded-xl p-3 hover:bg-gray-200 transition"
+          >
+            <div className="flex flex-col text-sm">
+              <span>1 عدد</span>
+              <span className="font-bold">200 تومان</span>
+              <button className="text-red-500 text-xs hover:underline">
+                حذف
+              </button>
             </div>
-            <button>حذف از سبد</button>
-          </div>
-          <div className="flex gap-3">
-            <img src="" alt="" />
-            <p>موبایل</p>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <p>1 خرید</p>
-              <p>200 تومان</p>
+
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gray-300 rounded-lg" />
+              <p className="font-semibold">موبایل</p>
             </div>
-            <button>حذف از سبد</button>
           </div>
-          <div className="flex gap-3">
-            <img src="" alt="" />
-            <p>موبایل</p>
-          </div>
-        </div>
+        ))}
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <p>1 خرید</p>
-              <p>200 تومان</p>
-            </div>
-            <button>حذف از سبد</button>
-          </div>
-          <div className="flex gap-3">
-            <img src="" alt="" />
-            <p>موبایل</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </aside>
   );
 }
 
