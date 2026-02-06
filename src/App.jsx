@@ -1,10 +1,10 @@
-import { h1 } from "framer-motion/client";
 import "./styles/Style.css";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-    <h1 className="text-red-400">hello</h1>
+      <Header />
     </>
   );
 }
