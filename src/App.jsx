@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <ShoppingCart />
         <Products />
       </div>
+      <Footer />
     </>
   );
 }
