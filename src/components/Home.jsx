@@ -9,6 +9,7 @@ import data from "../data.json";
 function Home() {
   const [item, setItem] = useState(data.products);
   const [sort, setSort] = useState("asc");
+  const [brand, setBrand] = useState();
 
   const sortProducts = (event) => {
     setSort(event.target.value);
@@ -20,10 +21,29 @@ function Home() {
     }
   };
 
+  const filterProducts = (event) => {
+    if (event.target.value === "") {
+      setBrand(event.target.value);
+      setItem(data.products);
+    } else {
+      setBrand(event.target.value);
+      setItem(
+        data.products.filter(
+          (product) => product.availableBrand.indexOf(event.target.value) >= 0,
+        ),
+      );
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]">
       <Header />
-      <Filter count={item.length} sortProducts={sortProducts} />
+      <Filter
+        count={item.length}
+        sortProducts={sortProducts}
+        brand={brand}
+        filterProducts={filterProducts}
+      />
 
       <main className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 px-4">
         <ShoppingCart />

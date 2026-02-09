@@ -4,13 +4,17 @@ function Filter(props) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl p-6">
         <div className="flex flex-col gap-2">
           <label className="font-semibold text-gray-700">برند</label>
-          <select className="rounded-xl border-none bg-gray-100 focus:ring-2 focus:ring-violet-500 transition">
-            <option>همه</option>
-            <option>Apple</option>
-            <option>Samsung</option>
-            <option>Xiaomi</option>
-            <option>LG</option>
-            <option>Nokia</option>
+          <select
+            value={props.brand}
+            onChange={props.filterProducts}
+            className="rounded-xl border-none bg-gray-100 focus:ring-2 focus:ring-violet-500 transition"
+          >
+            <option value="">همه</option>
+            <option value="apple">Apple</option>
+            <option value="samsung">Samsung</option>
+            <option value="xiaomi">Xiaomi</option>
+            <option value="lg">LG</option>
+            <option value="nokia">Nokia</option>
           </select>
         </div>
 
