@@ -12,13 +12,16 @@ function Products(props) {
             </div>
 
             <div className="p-5 flex flex-col gap-3">
-              <h3 className="text-xl font-bold text-center">محصول {item.title}</h3>
+              <h3 className="text-xl font-bold text-center">
+                محصول {item.title}
+              </h3>
 
-              <p className="text-gray-500 text-sm text-center">
-                {item.price}
-              </p>
+              <p className="text-gray-500 text-sm text-center">{item.price}</p>
 
-              <button className="mt-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-2 rounded-xl font-semibold hover:opacity-90 transition">
+              <button
+                onClick={() => props.addProducts(item)}
+                className="mt-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-2 rounded-xl font-semibold hover:opacity-90 transition"
+              >
                 افزودن به سبد
               </button>
             </div>

@@ -1,4 +1,5 @@
-function ShoppingCart() {
+function ShoppingCart(props) {
+  console.log(props);
   return (
     <aside className="w-full md:w-80 p-6 top-24">
       <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4">
