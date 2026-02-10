@@ -1,5 +1,5 @@
 function ShoppingCart(props) {
-  const { cartItems } = props;
+  const { cartItems, removeProducts } = props;
   return (
     <aside className="w-full md:w-80 p-6 top-24">
       <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4">
@@ -15,7 +15,10 @@ function ShoppingCart(props) {
             <div className="flex flex-col text-sm">
               <span>{item.qty} تعداد</span>
               <span className="font-bold">{item.price} تومان</span>
-              <button className="text-red-500 text-xs hover:underline">
+              <button
+                onClick={() => removeProducts(item)}
+                className="text-red-500 text-xs hover:underline"
+              >
                 حذف
               </button>
             </div>
