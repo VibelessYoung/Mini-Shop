@@ -11,15 +11,13 @@ function Home() {
   const [sort, setSort] = useState("asc");
   const [brand, setBrand] = useState();
   const [cartItems, setCartItems] = useState(() => {
-  const storedCart = localStorage.getItem("cartItems");
-  return storedCart ? JSON.parse(storedCart) : [];
-});
+    const storedCart = localStorage.getItem("cartItems");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
 
-useEffect(() => {
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
-}, [cartItems]);
-
-
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const sortProducts = (event) => {
     setSort(event.target.value);
@@ -72,6 +70,10 @@ useEffect(() => {
     }
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]">
       <Header />
@@ -83,7 +85,11 @@ useEffect(() => {
       />
 
       <main className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 px-4">
-        <ShoppingCart cartItems={cartItems} removeProducts={removeProducts} />
+        <ShoppingCart
+          cartItems={cartItems}
+          removeProducts={removeProducts}
+          clearCart={clearCart}
+        />
         <Products item={item} addProducts={addProducts} />
       </main>
 

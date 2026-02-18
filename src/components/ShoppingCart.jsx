@@ -1,10 +1,12 @@
+import { button } from "framer-motion/client";
+
 function ShoppingCart(props) {
-  const { cartItems, removeProducts } = props;
+  const { cartItems, removeProducts, clearCart } = props;
   const itemPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const totalPrice = itemPrice;
   return (
     <aside className="w-full md:w-80 p-6 top-24">
-      <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4">
+      <div className="bg-white rounded-3xl shadow-xl p-5 space-y-4 flex flex-col">
         <h2 className="font-bold text-green-700 text-center">
           🛒 {cartItems.length} آیتم در سبد خرید
         </h2>
@@ -32,6 +34,16 @@ function ShoppingCart(props) {
           </div>
         ))}
         <div className="text-center"> جمع کل : {totalPrice}</div>
+        {cartItems.length > 0 ? (
+          <button
+            onClick={() => clearCart()}
+            className="border border-red-500 text-red-500 p-2"
+          >
+            حذف کل سبد خرید
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </aside>
   );
